@@ -1,0 +1,122 @@
+<!--
+Bailey K.
+Homepage 3.0
+7/6/15
+-->
+<html>
+<head>
+	<title>Welcome to my homepage</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Access Mobile Stylesheet -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+	<!-- Load JQuery Mobile -->
+	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+</head>
+	<style>
+		div.banner {
+			text-align:center;
+			margin:0px;
+			font-size: 6em; 
+			font-family: Helvetica; 
+			height: 200px; 
+			width:1875px; 
+			padding:0px;
+			margin: 0px;
+			border; 0px;
+		}
+		.pic {
+			width:1875px; 
+			padding: 0px; 
+			border: 0px;
+		}
+		#home {
+			background="polkadot.png"
+		}
+		p {
+			text-align:center;
+			font-size: 2em;
+		}
+		.list {
+			font-size: 150%;
+			text-align: center;
+		}
+	</style>
+<body>
+		<!--HOMEPAGE-->
+		<div data-role="page" id="home">
+		<div data-role="content">
+			<div class="banner" style ="background-color: #DDA0DD;"><h1>BAILEY POOP</h1></div>
+			<!--<img src= "http://cdn.history.com/sites/2/2013/12/new-york-city-H.jpeg" class="pic">-->
+			<img src= "http://walldes-download.com/wp-content/uploads/2015/04/Cute-Wide-HD-Wallpaper.jpg" class="pic">
+			<div style="background-color: magenta;" class="banner" ><h3 style="margin-top: 0; padding: 5px;">My <a href="http://www.girlswhocode.com"><img src= "https://www.refreshmiami.com/wp-content/uploads/2014/02/gwc-logo.png"></a>Summer</h3></div>
+				<p> Hi everyone! I am working at Girls Who Code Boutique this summer. Here are some of my accomplishments!</p>
+				<div class="list">
+					<li><a href="#square">Squares and Shapes</a></li>
+					<li><a href="#robot">Do The Robot</a></li>
+					<li><a href="#pig">PIG</a></li>
+					<li>Find the Blob</li>
+					<li><a href="#obama">Obamicon</a></li>
+					<li>Fish Tank</li>
+					<li><a href="#paddle">Paddle Ball</a></li>
+				</div>
+			<!--mess around with choices and stuff-->
+			<!--<label for ="select-choice-a" class="select"> Custom Menu: </label>-->
+			<select name="select-choice-a" id="options" data-native-menu="false">
+				<option>Which One Did You Like Best?</option>
+				<option value="nay">Squares and Shapes</option>
+				<option value="oink">Do the Robot</option>				
+				<option value="bah">Pig</option>
+				<option>Obamicon</option>
+				<option>Paddle Ball</option>
+				<input type = "button" value="Submit" data-theme="b" onclick="changePicture()">
+			</select>
+			<p>A picture of us!</p>
+			<center> <img src="https://gwcboutique.files.wordpress.com/2015/06/cropped-image1.jpg?w=709&h=453" width="1000px"> </center>
+			<p>Some of the classroom resources:</p>
+			<div class="list">
+					<li><a href="https://gwcboutique.wordpress.com">Blog</a></li>
+					<li><a href="https://twitter.com/GWC_Boutique">Twitter</a></li>
+			</div>
+		</div>
+		</div>
+		<!--PAGE square-->
+		<div data-role="page" id="square">
+		<div data-role="content">
+			<img src="square.png">
+			<p><a href="#home">back</a></p>
+		</div>
+		</div>
+		<!--PAGE pig-->
+		<div data-role="page" id="pig">
+		<div data-role="content">
+			<img src="pig.png">
+			<p><a href="#home">back</a></p>
+		</div>
+		</div>
+		<!--PAGE robot-->
+		<div data-role="page" id="robot">
+		<div data-role="content">
+			<img src="robot.jpg" width="1000px;">
+			<p><a href="#home">back</a></p>
+		</div>
+		</div>
+		<!--PAGE obama-->
+		<div data-role="page" id="obama">
+		<div data-role="content">
+			<img src="MyroPicture.jpg" width="1000px;">
+			<p style="font-size: 1em"><a href="#home">back</a></p>
+		</div>
+		</div>
+		<!--PAGE paddle-->
+		<div data-role="page" id="paddle">
+		<div data-role="content">
+			<img src="Capture.png">
+			<p><a href="#home">back</a></p>
+		</div>
+		</div>
+</body>
+</html>
