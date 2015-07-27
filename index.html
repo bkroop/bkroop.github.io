@@ -80,7 +80,7 @@
 			pos = new google.maps.LatLng(position.coords.latitude,
 										   position.coords.longitude);
 			console.log(pos);
-			console.log(pos[0]);
+			console.log(pos[0]); // undefined
 			var infowindow = new google.maps.InfoWindow({
 				map: map,
 				position: pos,
@@ -133,7 +133,7 @@
 			var condition = prompt("What condition is the homeless person in?", "no blanket, need food");
 			var position = initialize();
 			console.log(position);
-			console.log(position.A);
+			console.log(position.vf.A);
 			console.log(position[0]);
 			locations.push([condition, position[0], position[1], i+1]);
 					
