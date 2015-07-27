@@ -123,7 +123,7 @@
 	//POINTS-----------------------------------------------------------------------
 		
 	var locations = [
-		//['hungry', 34.0093515, -118.49746820000001, 0],
+		['hungry', 34.0093515, -118.49746820000001, 0],
 		//['needs blanket', 38, -119, 1],
 	];	
 	var lat,lng;
@@ -158,7 +158,7 @@
 			
 			var condition = prompt("What condition is the homeless person in?", "no blanket, need food");
 			
-			locations.push([condition, lat, lng, 7]);
+			locations.push([condition, lat, lng, 1]);
 		
 			//places points:
 			for (i = 0; i < locations.length; i++) {  
