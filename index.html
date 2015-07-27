@@ -142,11 +142,11 @@
 			
 			//mollee's new code
 			function getLocation() {
-			if (navigator.geolocation) {
-					navigator.geolocation.getCurrentPosition(showPosition);
-				} else {
-					alert("Geolocation is not supported by this browser.");
-				}
+				if (navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(showPosition);
+					} else {
+						alert("Geolocation is not supported by this browser.");
+					}
 			}
 			function showPosition(position) {
 			  var lat = position.coords.latitude;
@@ -155,6 +155,8 @@
 			  alert(lat,lng);
 			}
 			
+			getLocation();
+			showPosition();
 			
 			locations.push([condition, 33, -188, i+1]);
 					
