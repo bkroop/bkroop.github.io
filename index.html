@@ -157,6 +157,7 @@
 			  map.setCenter(new google.maps.LatLng(lat, lng));
 			  alert(lat);
 			  alert(lng);
+			locations.push([condition, lat, lang, i+1]);
 			}
 			getLocation();
 
@@ -164,7 +165,6 @@
 			
 			
 			
-			locations.push([condition, 33, -188, i+1]);
 					
 			var infowindow = new google.maps.InfoWindow();
 			
