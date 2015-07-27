@@ -139,7 +139,23 @@
 			console.log(position.lat);
 			console.log(position[0]);
 			*/
-									   
+			
+			//mollee's new code
+			function getLocation() {
+			if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(showPosition);
+				} else {
+					alert("Geolocation is not supported by this browser.");
+				}
+			}
+			function showPosition(position) {
+			  var lat = position.coords.latitude;
+			  var lng = position.coords.longitude;
+			  map.setCenter(new google.maps.LatLng(lat, lng));
+			  alert(lat,lng);
+			}
+			
+			
 			locations.push([condition, position[0], position[1], i+1]);
 					
 			var infowindow = new google.maps.InfoWindow();
