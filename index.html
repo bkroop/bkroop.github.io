@@ -73,9 +73,11 @@
 	
 	//GEOLOCATION------------------------------------------------------------------------------------
 	// Try HTML5 geolocation
+		var pos;
+	
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
-			var pos = new google.maps.LatLng(position.coords.latitude,
+			pos = new google.maps.LatLng(position.coords.latitude,
 										   position.coords.longitude);
 			console.log(pos);
 			console.log(pos[0]);
@@ -93,9 +95,6 @@
 		// Browser doesn't support Geolocation
 			handleNoGeolocation(false);
 		}
-		
-		var pos = new google.maps.LatLng(navigator.geolocation.coords.latitude,
-										   navigator.geolocation.coords.longitude);
 		
 		return pos;
 	}
