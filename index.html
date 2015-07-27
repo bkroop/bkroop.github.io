@@ -79,7 +79,6 @@
 										   position.coords.longitude);
 			console.log(pos);
 			console.log(pos[0]);
-			return pos;
 			var infowindow = new google.maps.InfoWindow({
 				map: map,
 				position: pos,
@@ -94,6 +93,9 @@
 		// Browser doesn't support Geolocation
 			handleNoGeolocation(false);
 		}
+		
+		var pos = new google.maps.LatLng(navigator.geolocation.coords.latitude,
+										   navigator.geolocation.coords.longitude);
 		
 		return pos;
 	}
