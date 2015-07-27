@@ -142,14 +142,7 @@
 			
 		//	initialize();
 			//mollee's new code
-			function getLocation() {
-				if (navigator.geolocation) {
-						navigator.geolocation.getCurrentPosition(showPosition);
-					} else {
-						alert("Geolocation is not supported by this browser.");
-					}
-					
-				var infowindow = new google.maps.InfoWindow();
+			var infowindow = new google.maps.InfoWindow();
 			
 			var marker, i; //currentId, uniqueId, id;
 				
@@ -167,6 +160,16 @@
 				}
 			})(marker, i));
 			}
+			
+			
+			function getLocation() {
+				if (navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(showPosition);
+					} else {
+						alert("Geolocation is not supported by this browser.");
+					}
+					
+
 			}
 			function showPosition(position) {
 			  var lat = position.coords.latitude;
