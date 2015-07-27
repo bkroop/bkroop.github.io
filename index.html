@@ -46,9 +46,6 @@
 
 	}
 
-
-
-
     </style>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyMxCEgRgsRd_ZR1rvylGbEEUcBeJl6dI"></script>
 </head>
@@ -82,6 +79,7 @@
 										   position.coords.longitude);
 			console.log(pos);
 			console.log(pos[0]);
+			return pos;
 			var infowindow = new google.maps.InfoWindow({
 				map: map,
 				position: pos,
