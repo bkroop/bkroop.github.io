@@ -66,6 +66,12 @@
 
 	<script type="text/javascript">
 	
+		var map = new google.maps.Map(document.getElementById('map-canvas'), {
+			zoom: 3,
+			center: new google.maps.LatLng(0, 0),
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+
+	
 	function currentLocation() { 
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
