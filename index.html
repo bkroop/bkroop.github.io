@@ -142,10 +142,10 @@
 			  var lng = position.coords.longitude;
 			  console.log(lng);
 			  map.setCenter(new google.maps.LatLng(lat, lng));
-			  alert(lat);
-			  alert(lng);
+
 			 var condition = prompt("What condition is the homeless person in?", "no blanket, need food");
 			locations.push([condition, lat, lng, i+1]);
+			console.log(locations);
 			}
 
 	//ADD POINT-------------------------------------------------------------------------
@@ -164,6 +164,7 @@
 		//	initialize();
 			//mollee's new code
 			getLocation();
+			
 			var infowindow = new google.maps.InfoWindow();
 			
 			var marker; //currentId, uniqueId, id;
