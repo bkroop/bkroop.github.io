@@ -66,6 +66,49 @@
 
 	<script type="text/javascript">
 	
+	function currentLocation() { 
+		if(navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(position) {
+				var pos = new google.maps.LatLng(position.coords.latitude,
+											   position.coords.longitude);
+				console.log(pos);
+				console.log(pos[0]);
+				var infowindow = new google.maps.InfoWindow({
+					map: map,
+					position: pos,
+					content: 'Current location.'
+				});
+
+				map.setCenter(pos);
+			}, function() {
+			  handleNoGeolocation(true);
+			});
+		  } else {
+			// Browser doesn't support Geolocation
+			handleNoGeolocation(false);
+		  }
+		//}
+
+		function handleNoGeolocation(errorFlag) {
+		  if (errorFlag) {
+			var content = 'Error: The Geolocation service failed.';
+		  } else {
+			var content = 'Error: Your browser doesn\'t support geolocation.';
+		  }
+
+		  var options = {
+			map: map,
+			position: new google.maps.LatLng(60, 105),
+			content: content
+		  };
+
+		  var infowindow = new google.maps.InfoWindow(options);
+		  map.setCenter(options.position);
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+	}
+	
 	function initialize() {
 	//add mapp:
 		var map = new google.maps.Map(document.getElementById('map-canvas'), {
@@ -74,50 +117,10 @@
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 	});
 	
+		currentLocation();
+	}
 	//GEOLOCATION------------------------------------------------------------------------------------
 	// Try HTML5 geolocation
-	var pos;
-	if(navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(function(position) {
-			 pos = new google.maps.LatLng(position.coords.latitude,
-										   position.coords.longitude);
-			console.log(pos);
-			console.log(pos[0]);
-			var infowindow = new google.maps.InfoWindow({
-				map: map,
-				position: pos,
-				content: 'Current location.'
-			});
-
-			map.setCenter(pos);
-		}, function() {
-		  handleNoGeolocation(true);
-		});
-	  } else {
-		// Browser doesn't support Geolocation
-		handleNoGeolocation(false);
-	  }
-	}
-
-	function handleNoGeolocation(errorFlag) {
-	  if (errorFlag) {
-		var content = 'Error: The Geolocation service failed.';
-	  } else {
-		var content = 'Error: Your browser doesn\'t support geolocation.';
-	  }
-
-	  var options = {
-		map: map,
-		position: new google.maps.LatLng(60, 105),
-		content: content
-	  };
-
-	  var infowindow = new google.maps.InfoWindow(options);
-	  map.setCenter(options.position);
-	}
-
-	google.maps.event.addDomListener(window, 'load', initialize);
-
 	
 		
 	//POINTS-----------------------------------------------------------------------
@@ -132,7 +135,8 @@
 			//var lat = Number(prompt("Please enter latitude", "latitude"));
 			//var loong = Number(prompt("Please enter longitude", "longitude"));
 			var condition = prompt("What condition is the homeless person in?", "no blanket, need food");
-			locations.push([condition, pos.A, pos.F, i+1]);
+			var position = currentLocation();
+			locations.push([condition, position[0], position[1], i+1]);
 					
 			var infowindow = new google.maps.InfoWindow();
 			
