@@ -130,7 +130,7 @@
 			//var lat = Number(prompt("Please enter latitude", "latitude"));
 			//var loong = Number(prompt("Please enter longitude", "longitude"));
 			var condition = prompt("What condition is the homeless person in?", "no blanket, need food");
-			var position = currentLocation();
+			var position = initialize();
 			locations.push([condition, position[0], position[1], i+1]);
 					
 			var infowindow = new google.maps.InfoWindow();
