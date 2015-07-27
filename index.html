@@ -127,26 +127,7 @@
 		//['needs blanket', 38, -119, 1],
 	];	
 	var i;
-	function getLocation() {
-				if (navigator.geolocation) {
-						navigator.geolocation.getCurrentPosition(showPosition);
-					} else {
-						alert("Geolocation is not supported by this browser.");
-					}
-					
-
-			}
-			function showPosition(position) {
-			  var lat = position.coords.latitude;
-			  console.log(lat);
-			  var lng = position.coords.longitude;
-			  console.log(lng);
-			  map.setCenter(new google.maps.LatLng(lat, lng));
-
-			 var condition = prompt("What condition is the homeless person in?", "no blanket, need food");
-			locations.push([condition, lat, lng, i+1]);
-			}
-
+	
 	//ADD POINT-------------------------------------------------------------------------
 		function addPoint() {
 			//var lat = Number(prompt("Please enter latitude", "latitude"));
@@ -205,7 +186,26 @@
 			}
 			*/
 		}
-		
+		function getLocation() {
+				if (navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(showPosition);
+					} else {
+						alert("Geolocation is not supported by this browser.");
+					}
+					
+
+			}
+			function showPosition(position) {
+			  var lat = position.coords.latitude;
+			  console.log(lat);
+			  var lng = position.coords.longitude;
+			  console.log(lng);
+			  map.setCenter(new google.maps.LatLng(lat, lng));
+
+			 var condition = prompt("What condition is the homeless person in?", "no blanket, need food");
+			locations.push([condition, lat, lng, i+1]);
+			}
+
 		
 
   </script>
