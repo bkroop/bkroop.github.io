@@ -49,7 +49,7 @@
     </style>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyMxCEgRgsRd_ZR1rvylGbEEUcBeJl6dI"></script>
 </head>
-<body>
+<body onload="initialize()">
 	<!--header-->
 	<center>
 	<div id="container">
@@ -132,12 +132,13 @@
 			//var lat = Number(prompt("Please enter latitude", "latitude"));
 			//var loong = Number(prompt("Please enter longitude", "longitude"));
 			var condition = prompt("What condition is the homeless person in?", "no blanket, need food");
+			
+			/*
 			var position = initialize();
 			console.log(position["A"]);
 			console.log(position.lat);
 			console.log(position[0]);
-
-			console.log(position.coords.latitude);
+			*/
 									   
 			locations.push([condition, position[0], position[1], i+1]);
 					
