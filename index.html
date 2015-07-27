@@ -52,7 +52,7 @@
     </style>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyMxCEgRgsRd_ZR1rvylGbEEUcBeJl6dI"></script>
 </head>
-<body onload="currentLocation()">
+<body>
 	<!--header-->
 	<center>
 	<div id="container">
@@ -66,55 +66,6 @@
 
 	<script type="text/javascript">
 	
-		var map = new google.maps.Map(document.getElementById('map-canvas'), {
-			zoom: 3,
-			center: new google.maps.LatLng(0, 0),
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-
-	
-	function currentLocation() { 
-		if(navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(function(position) {
-				var pos = new google.maps.LatLng(position.coords.latitude,
-											   position.coords.longitude);
-				console.log(pos);
-				console.log(pos[0]);
-				var infowindow = new google.maps.InfoWindow({
-					map: map,
-					position: pos,
-					content: 'Current location.'
-				});
-
-				map.setCenter(pos);
-			}, function() {
-			  handleNoGeolocation(true);
-			});
-		  } else {
-			// Browser doesn't support Geolocation
-			handleNoGeolocation(false);
-		  }
-		//}
-
-		function handleNoGeolocation(errorFlag) {
-		  if (errorFlag) {
-			var content = 'Error: The Geolocation service failed.';
-		  } else {
-			var content = 'Error: Your browser doesn\'t support geolocation.';
-		  }
-
-		  var options = {
-			map: map,
-			position: new google.maps.LatLng(60, 105),
-			content: content
-		  };
-
-		  var infowindow = new google.maps.InfoWindow(options);
-		  map.setCenter(options.position);
-		}
-
-		google.maps.event.addDomListener(window, 'load', initialize);
-	}
-	
 	function initialize() {
 	//add mapp:
 		var map = new google.maps.Map(document.getElementById('map-canvas'), {
@@ -123,10 +74,48 @@
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 	});
 	
-		currentLocation();
-	}
 	//GEOLOCATION------------------------------------------------------------------------------------
 	// Try HTML5 geolocation
+	if(navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			var pos = new google.maps.LatLng(position.coords.latitude,
+										   position.coords.longitude);
+			console.log(pos);
+			console.log(pos[0]);
+			var infowindow = new google.maps.InfoWindow({
+				map: map,
+				position: pos,
+				content: 'Current location.'
+			});
+
+			map.setCenter(pos);
+		}, function() {
+		  handleNoGeolocation(true);
+		});
+	  } else {
+		// Browser doesn't support Geolocation
+		handleNoGeolocation(false);
+	  }
+	}
+
+	function handleNoGeolocation(errorFlag) {
+	  if (errorFlag) {
+		var content = 'Error: The Geolocation service failed.';
+	  } else {
+		var content = 'Error: Your browser doesn\'t support geolocation.';
+	  }
+
+	  var options = {
+		map: map,
+		position: new google.maps.LatLng(60, 105),
+		content: content
+	  };
+
+	  var infowindow = new google.maps.InfoWindow(options);
+	  map.setCenter(options.position);
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
 	
 		
 	//POINTS-----------------------------------------------------------------------
