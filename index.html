@@ -138,12 +138,10 @@
 	}
 	function showPosition(position) {
 		lat = position.coords.latitude;
-	  console.log(lat);
-	  lng = position.coords.longitude;
-	  console.log(lng);
-	  map.setCenter(new google.maps.LatLng(lat, lng));
-
-	 
+		console.log(lat);
+		lng = position.coords.longitude;
+		console.log(lng);
+		map.setCenter(new google.maps.LatLng(lat, lng));	 
 	}
 	//ADD POINT-------------------------------------------------------------------------
 		function addPoint() {
@@ -153,13 +151,15 @@
 			
 
 			getLocation();
-			console.log(locations[0]);
-			
+
 			var infowindow = new google.maps.InfoWindow();
 			
 			var marker,i; //currentId, uniqueId, id;
+			
 			var condition = prompt("What condition is the homeless person in?", "no blanket, need food");
-			locations.push([condition, lat, lng, i+1]);
+			
+			locations.push([condition, lat, lng, 7]);
+		
 			//places points:
 			for (i = 0; i < locations.length; i++) {  
 				marker = new google.maps.Marker({ //makes a new marker
