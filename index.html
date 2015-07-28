@@ -34,9 +34,10 @@
 	.button {
 		background-color: #FFC0CB;
 		font-family:'Verdana';
-		<!--padding: 2%;
+		font-size: 50%;
+		padding: 2%;
 		height:3%;
-		margins: 90%, 10%, 10%, 10%;-->
+		margins: 90%, 10%, 10%, 10%;
 		margin:10%;
 		width:75%;
 		position: static;
@@ -46,6 +47,24 @@
 		<!--width: 70%;
 		padding:0px;
 		margins: 10%;-->
+	}
+
+	#theHeader {
+			height: 50%;
+		}
+
+
+	@media screen and (max-width:500px) {
+		.button {
+			height: 80%;
+		}
+		.logo {
+			height: 100%;
+			width: 100%;
+		}
+		#theHeader {
+			height: 100px;
+		}
 	}
 
     </style>
@@ -110,6 +129,8 @@
 			['In need of food and water', 37.9667, 58.3333, 20],
 			['Needs food and a blanket', 19.4333, -99.1333, 21],
 			['Very cold (needs blanket)', 30.7667, 3.2167, 22],
+			['Very cold', 64.0000, -150.0000, 23],
+			['Cold and needs food', 55.0000, -115.0000, 24],
 		];	
 
 
