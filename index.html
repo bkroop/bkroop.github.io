@@ -64,14 +64,21 @@
 	<div id="map-canvas"></div>
 
 	<script type="text/javascript">
-		//locations--------------------------
+		//locations-------------------------------------------------------------
 		var locations = [
 			['hungry', 34.0093515, -118.49746820000001, 0],
 			['needs blanket', 38, -119, 1],
+			['hungy, needs clothes', 34.01627, -118.49687, 2],
+			['hungry', 34.017577, -118.497793, 3],
+			['needs blanket',34.0116371, -118.49767180000003,4],
+			['hungry', 34.01657092659369, -118.50066483020782,5],
+			['needs food', 34.017807026896016, -118.49173307418823,6],
+			['cold and hungry', 34.01126171559884, -118.48731279373169,7],
+			['needs sun protection', 34.01855401403689, -118.49593877792358,8]
 		];	
 
+		//place points--------------------------------------------------------------
 		function placePoints() {
-			//places points:
 			for (i = 0; i < locations.length; i++) {  
 				marker = new google.maps.Marker({ //makes a new marker
 					position: new google.maps.LatLng(locations[i][1], locations[i][2]), //sets position to lat and lng values
@@ -101,7 +108,7 @@
 		}
 
 		
-		//current location-----------------
+		//current location-----------------------------------------------------------------
 		var theLat,theLng;
 		var theCoords = []; //for coordinates
 		navigator.geolocation.getCurrentPosition(function(position) {
@@ -113,7 +120,7 @@
 			theCoords.push(lng);
 		});
 
-		//ADD POINT-----------------------
+		//ADD POINT------------------------------------------------------------------------
 		function addPoint() {
 			var infowindow = new google.maps.InfoWindow();
 			var theLat = theCoords[0];
