@@ -70,15 +70,7 @@
 			['needs blanket', 38, -119, 1],
 		];	
 
-		var map;
-		function initialize() {
-			//add mapp:
-			map = new google.maps.Map(document.getElementById('map-canvas'), {
-				zoom: 3,
-				center: new google.maps.LatLng(0, 0),
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-			});
-			
+		function placePoints() {
 			//places points:
 			for (i = 0; i < locations.length; i++) {  
 				marker = new google.maps.Marker({ //makes a new marker
@@ -93,6 +85,19 @@
 					}
 				})(marker, i));
 			}
+		}
+		
+		var map;
+		function initialize() {
+			//add mapp:
+			map = new google.maps.Map(document.getElementById('map-canvas'), {
+				zoom: 3,
+				center: new google.maps.LatLng(0, 0),
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			});
+			
+			placePoints();
+
 		}
 
 		
@@ -121,21 +126,7 @@
 			theCoords.pop(); //removes lat in theCoords array -- it is now empty
 			console.log(theCoords);
 			
-			//places points:
-			for (i = 0; i < locations.length; i++) {  
-				marker = new google.maps.Marker({ //makes a new marker
-					position: new google.maps.LatLng(locations[i][1], locations[i][2]), //sets position to lat and lng values
-					map: map
-				});
-
-				google.maps.event.addListener(marker, 'click', (function(marker, i) {
-					return function() {
-						infowindow.setContent(locations[i][0]);
-						infowindow.open(map, marker);
-					}
-				})(marker, i));
-			}
-
+			placePoints();
 		}
 
   </script>
